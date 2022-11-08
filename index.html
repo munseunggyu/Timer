@@ -5,17 +5,63 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>gu</title>
+  <link rel="stylesheet" href="./style/style.css">
   <style>
-   
+
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <h1>
-      <img src="" alt="위니브 로고">
+  <div id="root">
+    <h1 class="main_logo">
+      <img src="./img/weniv-logo.png" alt="위니브 로고">
     </h1>
-
+    <article class="timerContainer">
+      <h2 class="timer_tit">
+        TIMER
+      </h2>
+      <hr class="line">
+      <div class="time_input_container">
+        <div class="time_section">
+          <span>
+            hrs
+          </span>
+          <input
+          class="hour"
+          type="number" placeholder="00">
+        </div>
+        <div class="time_section">
+          <span>
+            min
+          </span>
+          <input 
+          class="min"
+          type="number" placeholder="00">
+        </div>
+        <div class="time_section">
+          <span>
+            sec
+          </span>
+          <input 
+          class="sec"
+          type="number" placeholder="00">
+        </div>
+      </div>
+      <div class="btns">
+        <button class="start">
+          <img src="./img/Vector 7.png" alt="">
+          <span>start</span>
+        </button>
+        <button class="reset">
+          <img src="./img/shape.png" alt="">
+          <span>reset</span>
+        </button>
+      </div>
+    </article>
+    <cite>
+      ⓒ WENIV Corp.
+    </cite>
   </div>
 
+  <script src="./main.js"></script>
 </body>
 </html>
