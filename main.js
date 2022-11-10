@@ -10,10 +10,12 @@ let pause = false;
 let timer;
 function start(e) {
   let hour, min, sec;
+  console.log(e.currentTarget.lastElementChild);
   let time = +hourEl.value * 3600 + +minEl.value * 60 + +secEl.value;
   if (e.currentTarget.dataset.name === "left") {
     if (pause === true) {
       pause = false;
+      e.currentTarget.lastElementChild.innerText = "pause";
       clearInterval(timer);
       return;
     } else {
@@ -28,6 +30,7 @@ function start(e) {
         return;
       }
       pause = true;
+      e.currentTarget.lastElementChild.innerText = "start";
     }
   }
   if (e.currentTarget.dataset.name === "right") {
@@ -36,12 +39,14 @@ function start(e) {
     hourEl.value = "";
     minEl.value = "";
     secEl.value = "";
+    leftBtn.lastElementChild.innerText = "start";
     return;
   }
   timer = setInterval(() => {
     if (time === 0) {
       clearInterval(timer);
       alert("타미어가 끝나 브렀으");
+
       return;
     }
     time--;
