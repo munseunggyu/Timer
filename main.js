@@ -10,15 +10,18 @@ let pause = false
 let timer
 function start(e){
   let hour,min,sec
-  if(pause === true){ 
-    pause = !pause
-    clearInterval(timer)
-    return
-  }else{
-    pause = !pause
+  if(e.currentTarget.dataset.name === 'left'){
+    if(pause === true){ 
+      pause = false
+      clearInterval(timer)
+      return
+    }else{
+      pause = true
+    }
   }
   if(e.currentTarget.dataset.name === 'right'){
     clearInterval(timer)
+    pause = false
     hourEl.value = ''
     minEl.value = ''
     secEl.value = ''
