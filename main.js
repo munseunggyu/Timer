@@ -12,10 +12,11 @@ function start(e) {
   let hour, min, sec;
   console.log(e.currentTarget.lastElementChild);
   let time = +hourEl.value * 3600 + +minEl.value * 60 + +secEl.value;
+
   if (e.currentTarget.dataset.name === "left") {
     if (pause === true) {
       pause = false;
-      e.currentTarget.lastElementChild.innerText = "pause";
+      e.currentTarget.lastElementChild.innerText = "start";
       clearInterval(timer);
       return;
     } else {
@@ -30,7 +31,7 @@ function start(e) {
         return;
       }
       pause = true;
-      e.currentTarget.lastElementChild.innerText = "start";
+      e.currentTarget.lastElementChild.innerText = "pause";
     }
   }
   if (e.currentTarget.dataset.name === "right") {
